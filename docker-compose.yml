@@ -1,0 +1,22 @@
+version: "3"
+services:
+  backend:
+    image: registry.cn-hangzhou.aliyuncs.com/speech_recognition/speech_recognition:1.0
+    container_name: backend
+    restart: always
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ./video:/home/share/lmcproject/Task_one/autosub/video         # 挂载视频目录
+      - ./code:/home/share/lmcproject/Task_one/autosub/baidusub3         # 挂载代码目录
+  
+  frontend:
+    image: registry.cn-hangzhou.aliyuncs.com/speech_recognition/speech_recognition_front:1.0
+    container_name: frontend
+    restart: always
+    tty: true
+    ports:
+      - 80:80
+    volumes:
+      - ./html:/var/www/html
