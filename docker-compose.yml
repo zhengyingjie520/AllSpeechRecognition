@@ -10,6 +10,7 @@ services:
     volumes:
       - ./video:/home/share/lmcproject/Task_one/autosub/video         # 挂载视频目录
       - ./code:/home/share/lmcproject/Task_one/autosub/baidusub3         # 挂载代码目录
+      - ./web:/usr/local/apache-tomcat-8.5.69/webapps         # 挂载代码目录
   
   frontend:
     image: registry.cn-hangzhou.aliyuncs.com/speech_recognition/speech_recognition_front:1.0
