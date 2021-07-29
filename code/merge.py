@@ -79,7 +79,7 @@ class RealizeAddSubtitles():
             # 合成视频，写入文件
             video = CompositeVideoClip([video, *txts])
             fn, ext = splitext(self.src_video)
-            video.write_videofile(f'{fn}_2带字幕{ext}')
+            video.write_videofile(f'{fn}_over{ext}')
 
 
 # if __name__ == '__main__':

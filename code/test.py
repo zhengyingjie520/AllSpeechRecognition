@@ -34,7 +34,7 @@ def GetAudio(inUrl,outUrl):
 
 # 功能四：去除视频中的水印logo
 def movelogo(input,output,x,y,w,h):
-    cmd = "cmd.exe /c ffmpeg -i " + input + " -filter_complex \"delogo=x=" + x + ":y=" + y + ":w=" + w + ":h=" + h + ":show=0\" " + output
+    cmd = "ffmpeg -i " + input + " -filter_complex \"delogo=x=" + x + ":y=" + y + ":w=" + w + ":h=" + h + ":show=0\" " + output
     os.system(cmd)
 
 # 中间方法，生成logo
